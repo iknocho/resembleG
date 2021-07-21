@@ -35,11 +35,12 @@ public class PostController {
     }
 
      */
-    @PostMapping("post/update")
-    //@PathVariable 아닐수도
+    @PostMapping("post/update/{id}")
+    //@PathVariable 아이디와 타이틀? content를 같이 보내기 힘듬 id 를 보내고 id값에 postdto값을 바꾸고 싶음 post와 postdto를 나눈이유는?????
+    //get과 post룰 둘다 사용못하는게 문제다... 해결위해서는 postDTO에 id값을 넣으면 되나요????
     public void updatePost(@PathVariable Long id,@RequestBody PostDTO postDTO){
         postService.update(id,postDTO);
     }
-
-
+    @PostMapping("post/delete/{id}")
+    public void deletePost(@PathVariable Long id){postService.deletePost(id);}
 }

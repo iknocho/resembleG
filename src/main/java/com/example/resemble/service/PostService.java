@@ -47,4 +47,13 @@ public class PostService {
         });
         //return postRepository.save(selectPost);
     }
+
+    public void deletePost(Long id){
+        Optional<Post> post=postRepository.findById(id);
+
+        post.ifPresent(selectPost->{
+            postRepository.delete(selectPost);
+        });
+
+    }
 }
