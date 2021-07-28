@@ -39,7 +39,7 @@ public class PostService {
         String content=postDTO.getContent();
 
         Optional<Post> post=postRepository.findById(id);
-
+    //옵셔널 값이 없으면 예외를 던진다 반드시 값이 있어야하는 객체일때 optional.of사용
         post.ifPresent(selectPost->{
             selectPost.setTitle(title);
             selectPost.setContent(content);

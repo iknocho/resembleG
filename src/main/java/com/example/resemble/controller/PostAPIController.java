@@ -15,6 +15,7 @@ public class PostAPIController {
         return searchVo;
     }
     //api 잘 작동되는지 확인방법
+
     @PostMapping(value="/postMapping")
     public SearchVO postMapping(@RequestBody SearchVO searchVO){
         return searchVO;
